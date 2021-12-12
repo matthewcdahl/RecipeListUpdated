@@ -17,6 +17,7 @@
 		60C34B1927612A07002E44E9 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C34B1827612A07002E44E9 /* Recipe.swift */; };
 		60C34B1B27612FB6002E44E9 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C34B1A27612FB6002E44E9 /* RecipeModel.swift */; };
 		60C4472C27640111002F7F6F /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C4472B27640111002F7F6F /* RecipeTabView.swift */; };
+		60DF37982766847700C48151 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DF37972766847700C48151 /* Ingredient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		60C34B1827612A07002E44E9 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		60C34B1A27612FB6002E44E9 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		60C4472B27640111002F7F6F /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
+		60DF37972766847700C48151 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				60C34B1827612A07002E44E9 /* Recipe.swift */,
+				60DF37972766847700C48151 /* Ingredient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				601257242762961F00F9E51D /* RecipeDetailView.swift in Sources */,
 				60C34B1B27612FB6002E44E9 /* RecipeModel.swift in Sources */,
 				60C34B06276128AC002E44E9 /* RecipeListView.swift in Sources */,
+				60DF37982766847700C48151 /* Ingredient.swift in Sources */,
 				60C34B04276128AC002E44E9 /* RecipeListApp.swift in Sources */,
 				604BDB9027618358000EEF46 /* DataService.swift in Sources */,
 				60C4472C27640111002F7F6F /* RecipeTabView.swift in Sources */,
