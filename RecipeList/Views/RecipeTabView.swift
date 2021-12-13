@@ -14,7 +14,7 @@ struct RecipeTabView: View {
     var body: some View {
         TabView(selection: $selectedTab){
             VStack{
-                Text("Featured View goes here")
+                RecipeFeaturedView()
                 Button(action: {
                     selectedTab = 1
                 }, label: {
@@ -32,7 +32,7 @@ struct RecipeTabView: View {
                     Text("All")
                 }
                 .tag(1)
-        }
+        }.environmentObject(RecipeModel())
     }
 }
 
