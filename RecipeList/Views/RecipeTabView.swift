@@ -13,14 +13,8 @@ struct RecipeTabView: View {
     
     var body: some View {
         TabView(selection: $selectedTab){
-            VStack{
-                RecipeFeaturedView()
-                Button(action: {
-                    selectedTab = 1
-                }, label: {
-                    Text("Take me to tab 1")
-                })
-            }
+           
+            RecipeFeaturedView()
                 .tabItem{
                     Image(systemName: "star.fill")
                     Text("Featured")
