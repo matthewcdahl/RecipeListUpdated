@@ -22,7 +22,20 @@ class Recipe: Identifiable, Decodable{
     var directions: [String]
     var highlights: [String]
     
-    
+    func getHighlightsString() -> String{
+        var toRtn = ""
+        for h in highlights{
+            if(h == highlights.last){
+                toRtn += h
+            }
+            else{
+                toRtn += h + ", "
+            }
+        }
+        
+        return toRtn
+        
+    }
     
     
 }

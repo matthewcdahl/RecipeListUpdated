@@ -9,7 +9,9 @@ import SwiftUI
 
 struct RecipeDetailView: View {
     
-    var recipe: Recipe
+    @State var recipe: Recipe
+    @State var selectedIndex: Int = 2
+    var fromList: Bool
     
     var body: some View {
         NavigationView{
@@ -21,6 +23,24 @@ struct RecipeDetailView: View {
                     Image(recipe.image)
                         .resizable()
                         .scaledToFill()
+                    
+                    Text(recipe.name)
+                        .font(.largeTitle)
+                        .padding([.leading, .bottom])
+                    
+                    //MARK: Picker
+                    Text("Pick your serving size")
+                        .font(.title3)
+                        .padding(.horizontal)
+                    Picker("Servings", selection: $selectedIndex){
+                        Text("2").tag(2)
+                        Text("4").tag(4)
+                        Text("6").tag(6)
+                        Text("8").tag(8)
+                    }
+                    .pickerStyle(.segmented)
+                    .frame(width: 240, height: 20, alignment: .leading)
+                    .padding([.leading, .bottom])
 
                     
                     //MARK: Ingredients
@@ -29,7 +49,7 @@ struct RecipeDetailView: View {
                             .font(.headline)
                             .padding(.all, 3)
                         ForEach(recipe.ingredients){ i in
-                            Text("• " + i.name)
+                            Text("• " + RecipeModel.getPortion(ingredient: i, recipeServings: recipe.servings, targetServings: selectedIndex) + i.name)
                                 .padding(.bottom, 3)
                         }
                     }
@@ -48,13 +68,24 @@ struct RecipeDetailView: View {
                         }
                     }
                     .padding(.horizontal)
+                    
+                    if(fromList){
+                        HStack{
+                            Text("Featured")
+                            Toggle("Featured", isOn: $recipe.featured).labelsHidden()
+                        }
+                        .padding()
+                    }
                 }
                 
                 
                 
             }
-        }.navigationBarTitle(recipe.name)
+        }
+        
     }
+    
+
 }
 
 struct RecipeDetailView_Previews: PreviewProvider {
@@ -63,7 +94,7 @@ struct RecipeDetailView_Previews: PreviewProvider {
         
         let recipe = DataService.getLocalData()[0]
         NavigationView{
-        RecipeDetailView(recipe: recipe)
+            RecipeDetailView(recipe: recipe, fromList: true)
         }
     }
 }

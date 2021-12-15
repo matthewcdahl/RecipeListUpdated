@@ -22,7 +22,7 @@ struct RecipeListView: View {
                     LazyVStack(alignment: .leading){
                         ForEach(model.recipes){ r in
                             NavigationLink(destination:{
-                                RecipeDetailView(recipe: r)
+                                RecipeDetailView(recipe: r, fromList: true)
                             } ,label: {
                                 HStack(spacing: 20){
                                     Image(r.image)
@@ -31,8 +31,14 @@ struct RecipeListView: View {
                                         .frame(width: 50, height: 50, alignment: .center)
                                         .clipped()
                                         .cornerRadius(5)
-                                    Text(String(r.name))
-                                        .foregroundColor(.black)
+                                    VStack(alignment: .leading){
+                                        Text(String(r.name))
+                                            .foregroundColor(.black)
+                                            .bold()
+                                        Text(r.getHighlightsString())
+                                            .foregroundColor(.black)
+                                        
+                                    }
                                 }
                             })
                         }
