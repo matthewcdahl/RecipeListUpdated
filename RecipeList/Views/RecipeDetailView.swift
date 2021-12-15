@@ -25,8 +25,8 @@ struct RecipeDetailView: View {
                         .scaledToFill()
                     
                     Text(recipe.name)
-                        .font(.largeTitle)
                         .padding([.leading, .bottom])
+                        .font(Font.custom("Avenir Heavy", size: 24))
                     
                     //MARK: Picker
                     Text("Pick your serving size")
@@ -46,11 +46,12 @@ struct RecipeDetailView: View {
                     //MARK: Ingredients
                     VStack(alignment: .leading){
                         Text("Ingredients")
-                            .font(.headline)
+                            .font(Font.custom("Avenir Heavy", size: 16))
                             .padding(.all, 3)
                         ForEach(recipe.ingredients){ i in
                             Text("• " + RecipeModel.getPortion(ingredient: i, recipeServings: recipe.servings, targetServings: selectedIndex) + i.name)
                                 .padding(.bottom, 3)
+                                .font(Font.custom("Avenir", size: 15))
                         }
                     }
                     .padding(.horizontal)
@@ -62,9 +63,11 @@ struct RecipeDetailView: View {
                         Text("Directions")
                             .font(.headline)
                             .padding(.all, 3)
+                            .font(Font.custom("Avenir Heavy", size: 16))
                         ForEach(0..<recipe.directions.count, id: \.self){ i in
                             Text(String(i+1) + ". " + recipe.directions[i])
                                 .padding(.bottom, 3)
+                                .font(Font.custom("Avenir", size: 15))
                         }
                     }
                     .padding(.horizontal)
